@@ -3,7 +3,9 @@ require("dotenv").config();
 const { Telegraf } = require('telegraf');
 
 const bot = new Telegraf(process.env.TG_TOKEN);
-bot.command('connect', (ctx) => {
+bot.command('link', (ctx) => {
+  const { payload, from } = ctx;
+  console.log("payload", payload, "fromId", from.id, "from username", from.username, "from", from);
   console.log(ctx);
   ctx.reply('got command');
 });
