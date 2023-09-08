@@ -6,6 +6,7 @@ const bot = new Telegraf(process.env.TG_TOKEN);
 bot.command('link', (ctx) => {
   const { payload, from, chat } = ctx;
   console.log("payload", payload, "fromId", from.id, "from username", from.username, "from", from, 'chat', chat);
+  console.log('admins', ctx.getChatAdministrators(chat.id));
   console.log(ctx);
   ctx.reply('got command');
 });
