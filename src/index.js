@@ -14,7 +14,7 @@ bot.command('link', async (ctx) => {
       ctx.reply(`From user admin: ${ from.first_name } ${ from.last_name }`);
     }
   } else {
-    ctx.reply(`Payload`, payload, `from`, from);
+    ctx.reply(`Payload: ${ payload }; from: ${ JSON.stringify(from) }`);
   }
 
   // todo: 1. group handling: if it's group, then check whether from an admin;
