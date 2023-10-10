@@ -23,6 +23,9 @@ bot.command('link', async (ctx) => {
 
   ctx.reply('got command: link');
 });
-bot.on('text', (ctx) => ctx.reply('👍'));
+bot.on('text', (ctx) => {
+  console.log('text', ctx.payload);
+  ctx.reply('👍')
+});
 
 bot.launch();
